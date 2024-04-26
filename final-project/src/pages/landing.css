@@ -1,18 +1,33 @@
-section {
+:root {
   --primary: #104547;
   --secondary: #4b5358;
   --tertiary: #f2f7f2;
 }
 
+#logo {
+  font-size: 3rem;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  display: flex;
+  margin-top: 2%;
+  margin-left: 2%;
+}
+
 .login-container {
   display: flex;
   flex-direction: column;
-  border: black solid 1px;
   width: auto;
-  margin-left: 30%;
-  margin-right: 30%;
-  margin-top: 15%;
-  padding: 2% 1.5% 2% 1.5%;
+  margin-left: 35%;
+  margin-right: 35%;
+  margin-top: 5%;
+  padding: 2.5% 1.5% 2.5% 1.5%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
 }
 
 .login-title-container {
@@ -21,6 +36,10 @@ section {
 }
 
 #title-sign-in {
+  font-size: 2.2rem;
+  line-height: 1.25;
+  font-weight: 600;
+  padding: 0 0 4px 0;
   margin: 1% 0% 1% 0%;
 }
 
@@ -29,21 +48,66 @@ section {
 }
 
 input {
+  background: transparent;
   border: black solid 1px;
   padding: 2%;
+  margin: 2% 0%;
+  border-radius: 5px;
+  line-height: 1.8;
+  font-size: 1.2em;
+  font-weight: 400;
 }
 
 #forget-button {
   border: none;
   cursor: pointer;
-  color: var(--secondary);
+  color: var(--primary);
+  margin: 3% 0%;
 }
 
 #sign-in-button {
+  display: inline-block;
+  font-size: 1.2em;
+  font-weight: 600;
+  font-family: inherit;
   background-color: var(--primary);
-  border-radius: 15px;
+  padding: 0 24px;
+  border-radius: 30px;
   color: white;
-  padding: 2%;
   border: none;
   cursor: pointer;
+  line-height: 52px;
+  text-align: center;
+  margin-top: 2%;
+}
+
+#sign-in-button:hover {
+  background-color: #0c3436;
+}
+
+#or-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2% 0%;
+}
+
+#register-button {
+  display: inline-block;
+  font-size: 1.2em;
+  font-weight: 600;
+  font-family: inherit;
+  background-color: var(--tertiary);
+  padding: 0 24px;
+  border-radius: 30px;
+  color: black;
+  border: none;
+  cursor: pointer;
+  line-height: 52px;
+  text-align: center;
+  border: black solid 1px;
+}
+
+#register-button:hover {
+  background-color: #ececec;
 }
