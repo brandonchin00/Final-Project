@@ -1,6 +1,7 @@
 import React from "react";
 import "./landing.css";
 import { createClient } from "@supabase/supabase-js";
+import { Link } from "react-router-dom";
 
 const SUPABASE_URL = process.env.REACT_APP_SUPABASE_URL;
 const SUPABASE_ANON_KEY = process.env.REACT_APP_ANNON_KEY;
@@ -58,8 +59,10 @@ const Landing = () => {
             Sign In
           </button>
           <p id="or-block">or</p>
-          <button id="register-button">Register</button>
         </form>
+        <Link to="/register">
+          <button id="register-button">Register</button>
+        </Link>
       </div>
     </div>
   );

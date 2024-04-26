@@ -13,7 +13,7 @@
   margin-left: 2%;
 }
 
-.login-container {
+.register-container {
   display: flex;
   flex-direction: column;
   width: auto;
@@ -30,7 +30,7 @@
   flex-direction: column;
 }
 
-.login-title-container {
+.register-title-container {
   display: flex;
   flex-direction: column;
 }
@@ -85,13 +85,6 @@ input {
   background-color: #0c3436;
 }
 
-#or-block {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 2% 0%;
-}
-
 #register-button {
   display: inline-block;
   font-size: 1.2em;
@@ -106,9 +99,23 @@ input {
   line-height: 52px;
   text-align: center;
   border: black solid 1px;
-  width: 100%;
 }
 
 #register-button:hover {
   background-color: #ececec;
+}
+
+.sign-in-block {
+  display: flex;
+  flex-direction: row;
+  margin: 3.5% 0% 2% 0%;
+}
+
+#account-p {
+  margin: 0% 2% 0% 0%;
+}
+
+#account-a {
+  text-decoration: underline;
+  color: black;
 }
