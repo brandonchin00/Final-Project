@@ -1,6 +1,27 @@
 import React from "react";
 import "./register.css";
 import { Link } from "react-router-dom";
+import { supabase } from "../components/client.js";
+
+const handleSignUp = async (event) => {
+  event.preventDefault();
+  const { data, error } = await supabase.auth.signUp({
+    email: event.target.email.value,
+    password: event.target.password.value,
+    options: {
+      data: {
+        first_name: event.target.first_name.value,
+        last_name: event.target.last_name.value,
+      },
+    },
+  });
+
+  if (error) {
+    console.error("Error signing up:", error.message);
+  } else {
+    console.log("Signed up successfully:", data);
+  }
+};
 
 const Register = () => {
   return (
@@ -15,11 +36,21 @@ const Register = () => {
         </div>
         <form
           className="form-container"
-          //   onSubmit={handleSignIn}
+          onSubmit={handleSignUp}
           autoComplete="off"
         >
-          <input type="text" name="name" placeholder="First Name"></input>
-          <input type="text" name="name" placeholder="Last Name"></input>
+          <input
+            type="text"
+            name="first_name"
+            placeholder="First Name"
+            required
+          ></input>
+          <input
+            type="text"
+            name="last_name"
+            placeholder="Last Name"
+            required
+          ></input>
           <input type="text" name="email" placeholder="Email" required></input>
           <input
             type="password"
@@ -27,13 +58,13 @@ const Register = () => {
             placeholder="Password"
             required
           ></input>
-          <button id="sign-in-button" type="submit">
+          <button id="sign-in-button" type="submit" onSubmit={handleSignUp}>
             Register
           </button>
           <div className="sign-in-block">
             <p id="account-p">Have an account?</p>
             <Link to="/">
-              <a id="account-a">Sign In</a>
+              <button id="account-a">Sign In</button>
             </Link>
           </div>
         </form>

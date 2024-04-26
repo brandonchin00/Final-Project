@@ -118,4 +118,9 @@ input {
 #account-a {
   text-decoration: underline;
   color: black;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: inherit;
+  font-family: inherit;
 }
