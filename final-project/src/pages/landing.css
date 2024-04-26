@@ -73,7 +73,7 @@ input {
   background-color: var(--primary);
   padding: 0 24px;
   border-radius: 30px;
-  color: white;
+  color: var(--tertiary);
   border: none;
   cursor: pointer;
   line-height: 52px;
