@@ -1,0 +1,49 @@
+section {
+  --primary: #104547;
+  --secondary: #4b5358;
+  --tertiary: #f2f7f2;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  border: black solid 1px;
+  width: auto;
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-top: 15%;
+  padding: 2% 1.5% 2% 1.5%;
+}
+
+.login-title-container {
+  display: flex;
+  flex-direction: column;
+}
+
+#title-sign-in {
+  margin: 1% 0% 1% 0%;
+}
+
+#subtitle-sign-in {
+  margin: 0% 0% 3% 0%;
+}
+
+input {
+  border: black solid 1px;
+  padding: 2%;
+}
+
+#forget-button {
+  border: none;
+  cursor: pointer;
+  color: var(--secondary);
+}
+
+#sign-in-button {
+  background-color: var(--primary);
+  border-radius: 15px;
+  color: white;
+  padding: 2%;
+  border: none;
+  cursor: pointer;
+}
