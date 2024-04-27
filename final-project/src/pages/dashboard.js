@@ -2,9 +2,14 @@ import React, { useEffect, useState } from "react";
 import "./landing.css";
 import "./dashboard.css";
 import { supabase } from "../components/client.js";
+import Post from "../components/post.js";
+import Form from "../components/popup.js";
 
+//useEffect --> Render after Async function
 const Dashboard = () => {
     const [name, setName] = useState("");
+    const [posts, setPosts] = useState([]);
+
     useEffect(() => {
         const fetchUser = async () => {
             const {
@@ -26,23 +31,40 @@ const Dashboard = () => {
                     " " +
                     returnData2.data[0].last_name
             );
+
+            const returnData3 = await supabase
+                .from("notes")
+                .select("id, title, category, content")
+                .eq("card_id", user.id);
+
+            setPosts(returnData3.data);
         };
         fetchUser();
     }, []);
 
     return (
-        <div>
+        <div className="dashboard-container">
             <div className="navbar-side">
-                <h1>Hello {name ? name : "Loading..."}</h1>
-                <div className="navbar-profile"></div>
-                <div className="navbar-items"></div>
+                <div className="navbar-title-container">
+                    <h1>{name ? name : "Loading..."}</h1>
+                </div>
+                <div className="navbar-items">
+                    <Form />
+                </div>
             </div>
-            <div className="content-container"></div>
+            <div className="content-container">
+                {posts.map((post, index) => (
+                    <Post
+                        key={index}
+                        id={post.id}
+                        title={post.title}
+                        category={post.category}
+                        content={post.content}
+                    />
+                ))}
+            </div>
         </div>
     );
 };
 
-// query first user_id
-// query user_id from user table
-// query user_id from item table
 export default Dashboard;
