@@ -42,6 +42,15 @@ const Dashboard = () => {
         fetchUser();
     }, []);
 
+    async function signOut() {
+        const { error } = await supabase.auth.signOut();
+        if (error) {
+            console.log("Error logging out:", error.message);
+        } else {
+            console.log("Logged out successfully");
+        }
+    }
+
     return (
         <div className="dashboard-container">
             <div className="navbar-side">
@@ -50,6 +59,7 @@ const Dashboard = () => {
                 </div>
                 <div className="navbar-items">
                     <Form />
+                    <button onClick={signOut}>Sign Out</button>
                 </div>
             </div>
             <div className="content-container">
@@ -66,5 +76,4 @@ const Dashboard = () => {
         </div>
     );
 };
-
 export default Dashboard;
