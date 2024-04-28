@@ -13,36 +13,36 @@ const Dashboard = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        const fetchUser = async () => {
-            const {
-                data: { user },
-            } = await supabase.auth.getUser();
-
-            const returnData = await supabase
-                .from("profile")
-                .select("first_name")
-                .eq("id", user.id);
-
-            const returnData2 = await supabase
-                .from("profile")
-                .select("last_name")
-                .eq("id", user.id);
-
-            setName(
-                returnData.data[0].first_name +
-                    " " +
-                    returnData2.data[0].last_name
-            );
-
-            const returnData3 = await supabase
-                .from("notes")
-                .select("id, title, category, content")
-                .eq("card_id", user.id);
-
-            setPosts(returnData3.data);
-        };
-        fetchUser();
+        fetchData();
     }, []);
+    //state change redo it again
+
+    async function fetchData() {
+        const {
+            data: { user },
+        } = await supabase.auth.getUser();
+
+        const returnData = await supabase
+            .from("profile")
+            .select("first_name")
+            .eq("id", user.id);
+
+        const returnData2 = await supabase
+            .from("profile")
+            .select("last_name")
+            .eq("id", user.id);
+
+        setName(
+            returnData.data[0].first_name + " " + returnData2.data[0].last_name
+        );
+
+        const returnData3 = await supabase
+            .from("notes")
+            .select("id, title, category, content")
+            .eq("card_id", user.id);
+
+        setPosts(returnData3.data);
+    }
 
     async function signOut() {
         const { error } = await supabase.auth.signOut();
@@ -61,7 +61,7 @@ const Dashboard = () => {
                     <h1>{name ? name : "Loading..."}</h1>
                 </div>
                 <div className="navbar-items">
-                    <Form />
+                    <Form parentCallback={fetchData} />
                     <button onClick={signOut}>Sign Out</button>
                 </div>
             </div>
@@ -73,6 +73,7 @@ const Dashboard = () => {
                         title={post.title}
                         category={post.category}
                         content={post.content}
+                        parentCallback={fetchData}
                     />
                 ))}
             </div>

@@ -14,6 +14,8 @@ const Post = (props) => {
 
             if (error) {
                 throw error;
+            } else {
+                props.parentCallback();
             }
 
             console.log("Data deleted successfully");

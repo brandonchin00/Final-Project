@@ -2,13 +2,18 @@ import React, { useState } from "react";
 import "./popup.css";
 import { supabase } from "../components/client.js";
 
-const Form = () => {
+const Form = ({ parentCallback }) => {
     const [title, setTitle] = useState("");
     const [category, setCategory] = useState("");
     const [content, setContent] = useState("");
 
+    //<Form parentCallback={forceReloadPosts} />
+    //Call back function to reload posts after new post is created when the form is submitted
+
     const handleCreate = async (event) => {
         event.preventDefault(); // Prevent default form submission
+
+        parentCallback();
 
         const {
             data: { user },
@@ -32,7 +37,7 @@ const Form = () => {
     };
 
     return (
-        <form onSubmit={handleCreate}>
+        <form id="new-post-form" onSubmit={handleCreate}>
             <div>
                 <label>Title:</label>
                 <input
