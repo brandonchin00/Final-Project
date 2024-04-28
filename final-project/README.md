@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+Project Writeup and Reflection
+Write a summary of your project and your reflections on it in README.md, using Markdown format (1 per team, not 1 per person). The README.md file should include the following sections:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Developers: Brandon Chin
 
-## Available Scripts
+1. Project Overview
+   A online notebook where you can easily store quick notes and access it anywhere on the web. All you need is your email and password to access it.
 
-In the project directory, you can run:
+2. Usage Guidelines
 
-### `npm start`
+    1. First create an account with the website. Or Login with an Account if you want. Here is my account login and details for testing purposes: Username - brandonzchin@gmail.com | Password - 1234. If you're creating an account, click the register button and fill in the necessary details.
+    2. Once you're successful, you'll be redirected to dashboard page
+    3. On the left handside you will be able to create your note and enter the specific fields. You are not required to submit all details but advised.
+    4. Once you've submitted all details, it will rerender the post component and present you the information you wrote.
+    5. You can delete the information with a delete button.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+3. Dependencies
+   "@supabase/supabase-js": "^2.42.7",
+   "@testing-library/jest-dom": "^5.17.0",
+   "@testing-library/react": "^13.4.0",
+   "@testing-library/user-event": "^13.5.0",
+   "dotenv": "^16.4.5",
+   "react": "^18.3.0",
+   "react-dom": "^18.3.0",
+   "react-router-dom": "^6.23.0",
+   "react-scripts": "5.0.1",
+   "web-vitals": "^2.1.4"
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+4. Project Structure
 
-### `npm test`
+    App.js acts as the build. It compliles the components and controls the routing of pages.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+5. Collaboration Information (if applicable)
+   ChatGPT, CO-PILOT, Supabase Documentation (even though they're heavily deprecated at times), W3Schools, Youtube Tutorials.
+6. Acknowledgments
+   Supabase API
+7. Reflection
+   When I first started this course, I gave myself a goal. 1. Polish up my foundations of coding. 2. Learn authentication. As a result, I picked a project idea that required authentication and database management.
 
-### `npm run build`
+    What went well was my the UX. I had a great time building and designing the frontend with react. It was fun designing and picking the colors coordination for the website. Famailiarity with useState, useEffect, I was able to get the components to react precisely the way I wanted.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    I had trouble with connecting with Supabase's API becuase it was my first time using Supabase. So as I was intergrating the database, I was learning it. In addition, it was my first time using a structured database. I really struggled with authentication and then connecting it to my profile table. I also then connected it to my notes table with held all the content for each user.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    Figuring out Protected Routes was also fun. I never used protected routes becuase it was my first login component. So figuring that out in React documentation was a fun process.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    Once I was done with that. One of the biggest problem, I was rerendering the components once new data had been fetched.
 
-### `npm run eject`
+From the process point of view, what went well, what challenges that were faced and what could be improved. Provide reflections on topics such as project scoping, testing, and anything else that could have helped you succeed.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+From a learning perspective, what you learned through this project and how you'll use what you learned going forward. Reflect on how ChatGPT helped you and what you wish you knew beforehand that could have helped you succeed.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Note:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Begin by including the names of all team members at the top of the document.
+Keep the README.md clear and concise.
