@@ -4,11 +4,13 @@ import "./dashboard.css";
 import { supabase } from "../components/client.js";
 import Post from "../components/post.js";
 import Form from "../components/popup.js";
+import { useNavigate } from "react-router-dom";
 
 //useEffect --> Render after Async function
 const Dashboard = () => {
     const [name, setName] = useState("");
     const [posts, setPosts] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchUser = async () => {
@@ -48,6 +50,7 @@ const Dashboard = () => {
             console.log("Error logging out:", error.message);
         } else {
             console.log("Logged out successfully");
+            navigate("/");
         }
     }
 
